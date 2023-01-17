@@ -40,3 +40,21 @@ img {
 .flatpickr-input {
   padding: 5px 20px;
 }
+
+.clr-swtch__btn-start {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.clr-swtch__btn-stop {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}

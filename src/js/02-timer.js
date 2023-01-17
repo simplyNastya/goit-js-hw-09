@@ -12,6 +12,7 @@ const secondsEl = document.querySelector('span[data-seconds]');
 let currentUnixTime = new Date().getTime();
 let startUnixTime = null;
 let deltaTime = null;
+let secCounter = 0;
 
 const options = {
     enableTime: true,
@@ -37,17 +38,27 @@ function startTimer () {
         currentUnixTime = new Date().getTime();
 
         deltaTime = startUnixTime - currentUnixTime;
+
+        secCounter = deltaTime
+        secCounter -= 1
+
+        if (secCounter <= 0) {
+          clearInterval(timerId)
+          return
+        }
+
+        console.log(secCounter)
+
         console.log(deltaTime)
         const { days, hours, minutes, seconds } = convertMs(deltaTime);
         daysEl.textContent = `${days}`;
         hoursEl.textContent = `${hours}`;
         minutesEl.textContent = `${minutes}`;
-        secondsEl.textContent = `${seconds}`;
+        secondsEl.textContent = `${seconds}`;  
     }, 1000);
 
-    // if (deltaTime =< 0) {
-    //     clearInterval(timerId)
-    // }
+    console.log(secCounter)
+   
 }
 
 startBtnEl.addEventListener('click', startTimer)
