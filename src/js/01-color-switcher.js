@@ -24,6 +24,9 @@ function stop() {
     clearInterval(this.timerId);
 }
 
+startBtnEl.addEventListener('click', () => start());
+stopBtnEl.addEventListener('click', () => stop());
+
 
 // const button = {
 //     timerId: null,
@@ -46,11 +49,3 @@ function stop() {
 //     },
     
 // },
-
-
-    
-
-
-
-startBtnEl.addEventListener('click', () => start());
-stopBtnEl.addEventListener('click', () => stop());
