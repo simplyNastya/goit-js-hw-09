@@ -9,17 +9,18 @@ const hoursEl = document.querySelector('span[data-hours]');
 const minutesEl = document.querySelector('span[data-minutes]');
 const secondsEl = document.querySelector('span[data-seconds]');
 
-let currentUnixTime = new Date().getTime();
 let startUnixTime = null;
 let deltaTime = null;
 let secCounter = 0;
 
 const options = {
-    enableTime: true,
-    time_24hr: true,
-    defaultDate: new Date(),
-    minuteIncrement: 1,
-    onClose(selectedDates) {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  
+  onClose(selectedDates) {  
+      let currentUnixTime = new Date().getTime();
       startUnixTime = selectedDates[0].getTime();
       
       if (startUnixTime < currentUnixTime) {
