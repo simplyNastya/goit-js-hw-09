@@ -25,9 +25,8 @@ function handlerSubmit(event) {
   const amount = +event.target.elements.amount.value;
 
   for (i = 0; i < amount; i += 1) {
-    position += 1
 
-    createPromise(position, delay)
+    createPromise(i + 1, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })

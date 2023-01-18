@@ -12,6 +12,7 @@ const secondsEl = document.querySelector('span[data-seconds]');
 let startUnixTime = null;
 let deltaTime = null;
 let secCounter = 0;
+let currentUnixTime = new Date().getTime();
 
 const options = {
   enableTime: true,
@@ -20,7 +21,6 @@ const options = {
   minuteIncrement: 1,
   
   onClose(selectedDates) {  
-      let currentUnixTime = new Date().getTime();
       startUnixTime = selectedDates[0].getTime();
       
       if (startUnixTime < currentUnixTime) {
